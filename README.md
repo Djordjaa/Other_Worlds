@@ -22,42 +22,41 @@ Il progetto nasce in occasione del **70° anniversario della NASA (1958–2028)*
 In termini di scelte visive:
 
 - **Colori:** Per lo sfondo viene utilizzato il nero e il bianco per il testo, in modo da richiamare il contesto spaziale e rendere i pianeti distinguibili.
-- **Tipografia:** Caratteri tipografici monospaziati, nello specifico **IBM Plex Mono** e **IBM Plex Sans** per il testo descrittivo.
+- **Tipografia:** **IBM Plex Mono** e **IBM Plex Sans** per il testo descrittivo.
 - **Visualizzazione:** Gli esopianeti non hanno fotografie e la NASA stessa utilizza solo delle possibili rappresentazioni; di conseguenza non sono state usate texture illustrative, ma gli **shader** sono stati creati direttamente dai parametri fisici disponibili nell’archivio NASA.
 
-
 <img width="1728" height="958" alt="Overview" src="https://github.com/user-attachments/assets/a0f0090a-ad2b-4706-817a-a390c60124fc" />
-
 
 ## Riferimenti progettuali
 
 Come base concettuale ho preso spunto dalla generous interface di Mitchell Whitelaw, cioè un modo di presentare i dati che punta sull'esplorazione libera piuttosto che sulla semplice consultazione. L’interfaccia si ispira a strumenti di monitoraggio scientifico reali (come [NASA Eyes on Exoplanets](https://eyes.nasa.gov/apps/exo/)) e all’estetica delle interfacce HUD. Infine, per la narrazione visiva, mi sono ispirata ai contenuti del sito The Pudding e alle varie esplorazioni interattive della NASA.
-Per quanto riguarda la scelta di dove inserire i tooltip contestuali, mi sono basata su alcune delle domande che si fa il pubblico generale su questo tema, guardando i commenti sotto vari video sui social e direttamente su NASA Eyes on Exoplanets.
+Per quanto riguarda la scelta su cosa inserire nei tooltip contestuali, mi sono basata su alcune delle domande che si fa il pubblico generale su questo tema, guardando i commenti sotto vari video sui social e direttamente su NASA Eyes on Exoplanets.
 
 ## Design dell’interfaccia e modalità di interazione
 
-La prima volta che si visita il sito appare un breve testo introduttivo tramite animazione typewriter e nello sfondo sono visibili delle particelle luminose che evocano la vastità dell'archivio NASA (oltre 6’160 esopianeti), che in seguito si attenuano per far comparire gli 11 pianeti uno alla volta.
+La prima volta che si visita il sito appare un breve testo introduttivo tramite animazione typewriter e nello sfondo sono visibili delle particelle luminose che evocano la vastità dell'archivio NASA (oltre 6’298 esopianeti), che in seguito si attenuano per far comparire gli 11 pianeti uno alla volta.
 
-L’interfaccia è un **canvas 3D a schermo intero** con gli 11 pianeti disposti orizzontalmente in ordine di temperatura superficiale crescente. In basso, una barra riporta il nome e la temperatura di ciascun pianeta; sopra di essa, una linea della temperatura va da `← COOLER` a `HOTTER →`.
+L’interfaccia è un **canvas 3D a schermo intero** con gli 11 pianeti disposti orizzontalmente in ordine di temperatura superficiale crescente. In basso, c'è una barra che riporta il nome e la temperatura di ciascun pianeta; sopra di essa, una linea della temperatura va da `← Cooler` a `Hotter →`.
 
 - **Hover:** Compare un riquadro con nome e breve descrizione.
 - **Click:** La visuale esegue uno zoom sul pianeta, apre un pannello dati sul lato sinistro e nasconde gli altri elementi.
-- **Pannello Dati:** Segue una gerarchia fissa (tipo di pianeta, nome, frase descrittiva e dati fisici). Include una barra della temperatura comparativa rispetto alla Terra e un link diretto al NASA Exoplanet Archive.  
+- **Pannello Dati:** Segue una gerarchia fissa (tipo di pianeta, nome, frase descrittiva e dati fisici). Include una barra della temperatura comparativa rispetto alla Terra e un link diretto al NASA Exoplanet Archive.
 
-I termini tecnici sono cliccabili tramite **badge [?]** che aprono tooltip contestuali. Questo sistema permette di accedere a definizioni semplificate (come il metodo di scoperta) senza appesantire la lettura principale. Per tornare alla visualizzazione completa si utilizza il tasto `ESC` o la `X` in alto a destra.  
+I termini tecnici sono cliccabili tramite **badge [?]** che aprono tooltip contestuali. Questo sistema permette di accedere a definizioni semplificate (come il metodo di scoperta) senza appesantire la lettura principale. Per tornare alla visualizzazione completa si utilizza il tasto `ESC` o la `X` in alto a destra.
 
 <img width="1728" height="958" alt="Planet_Detail_1" src="https://github.com/user-attachments/assets/57294331-c610-4bd6-ac44-e5aa42682fe5" />
 <img width="1728" height="958" alt="Planet_Detail_tooltip" src="https://github.com/user-attachments/assets/9211f4cf-56dd-458d-91e8-9ebaf6adccb6" />
 
 https://github.com/user-attachments/assets/1e7a3e8e-884f-4e2c-ba9f-df7d1cb2ab96
 
-
 ## Tecnologia usata
 
 Il progetto è sviluppato in **HTML, CSS e JavaScript vanilla**, senza l’uso di framework.
 
-- **Rendering 3D:** Gestito tramite **Three.js (r128)**, con una camera prospettica a FOV 38°.
-- **Superfici:** Generate proceduralmente tramite **shader GLSL** (simplex noise e Fractal Brownian Motion).
+Per quanto riguarda le informazioni ho preso i dati dall'archivio NASA e li ho inseriti direttamente in JavaScript dentro un array di oggetti. Questo array serve a gestire sia i testi, che gli elementi grafici.
+
+- **Rendering 3D:** Gestito tramite **Three.js (r128)**, con una camera prospettica a FOV 38°. I pianeti sono stati disposti orizzontalmente in ordine di temperatura, tutti con la stessa dimensione di base per essere leggibili in un'unica schermata, tranne WASP-12 b che è stato allungato via codice per mostrare l'effetto della sua stella.
+- **Superfici:** Generate proceduralmente tramite **shader GLSL** (simplex noise e Fractal Brownian Motion). Sono state usate funzioni matematiche per simulare visivamente le caratteristiche fisiche, come la pioggia di ferro su WASP-76 b o il vento di vetro.
 - **Animazioni:** Transizioni gestite tramite **GSAP**.
 
 #### Esempio Shader: WASP-76 b
