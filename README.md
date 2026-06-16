@@ -25,7 +25,7 @@ In termini di scelte visive:
 - **Tipografia:** **IBM Plex Mono** e **IBM Plex Sans** per il testo descrittivo.
 - **Visualizzazione:** Gli esopianeti non hanno fotografie e la NASA stessa utilizza solo delle possibili rappresentazioni; di conseguenza non sono state usate texture illustrative, ma gli **shader** sono stati creati direttamente dai parametri fisici disponibili nell’archivio NASA.
 
-<img width="1728" height="958" alt="Overview" src="https://github.com/user-attachments/assets/a0f0090a-ad2b-4706-817a-a390c60124fc" />
+<img width="1728" height="961" alt="Overview" src="https://github.com/user-attachments/assets/43494aae-3b19-49e8-98f2-45b3b2a4e63d" />
 
 ## Riferimenti progettuali
 
@@ -44,10 +44,12 @@ L’interfaccia è un **canvas 3D a schermo intero** con gli 11 pianeti disposti
 
 I termini tecnici sono cliccabili tramite **badge [?]** che aprono tooltip contestuali. Questo sistema permette di accedere a definizioni semplificate (come il metodo di scoperta) senza appesantire la lettura principale. Per tornare alla visualizzazione completa si utilizza il tasto `ESC` o la `X` in alto a destra.
 
-<img width="1728" height="958" alt="Planet_Detail_1" src="https://github.com/user-attachments/assets/57294331-c610-4bd6-ac44-e5aa42682fe5" />
-<img width="1728" height="958" alt="Planet_Detail_tooltip" src="https://github.com/user-attachments/assets/9211f4cf-56dd-458d-91e8-9ebaf6adccb6" />
+<img width="1728" height="961" alt="Planet_Detail_1" src="https://github.com/user-attachments/assets/3d3b8021-91f2-4dac-8a9b-d786d2dadd1f" />
+<img width="1728" height="961" alt="Planet_Detail_tooltip" src="https://github.com/user-attachments/assets/d0acade2-7057-438d-b22c-04630645e0b8" />
 
-https://github.com/user-attachments/assets/1e7a3e8e-884f-4e2c-ba9f-df7d1cb2ab96
+
+https://github.com/user-attachments/assets/2ad3abb8-0f4b-4b7f-ba19-4a5866cebbb6
+
 
 ## Tecnologia usata
 
