@@ -19,12 +19,6 @@ Il tema specifico è la varietà dei mondi oltre il sistema solare. Gli 11 piane
 
 Il progetto nasce in occasione del **70° anniversario della NASA (1958–2028)**, come contributo alle celebrazioni della conquista dello spazio previste per il 2028.
 
-In termini di scelte visive:
-
-- **Colori:** Per lo sfondo viene utilizzato il nero e il bianco per il testo, in modo da richiamare il contesto spaziale e rendere i pianeti distinguibili.
-- **Tipografia:** **IBM Plex Mono** e **IBM Plex Sans** per il testo descrittivo.
-- **Visualizzazione:** Gli esopianeti non hanno fotografie e la NASA stessa utilizza solo delle possibili rappresentazioni; di conseguenza non sono state usate texture illustrative, ma gli **shader** sono stati creati direttamente dai parametri fisici disponibili nell’archivio NASA.
-
 <img width="1728" height="961" alt="Overview" src="https://github.com/user-attachments/assets/43494aae-3b19-49e8-98f2-45b3b2a4e63d" />
 
 ## Riferimenti progettuali
@@ -43,6 +37,13 @@ L’interfaccia è un **canvas 3D a schermo intero** con gli 11 pianeti disposti
 - **Pannello Dati:** Segue una gerarchia fissa (tipo di pianeta, nome, frase descrittiva e dati fisici). Include una barra della temperatura comparativa rispetto alla Terra e un link diretto al NASA Exoplanet Archive.
 
 I termini tecnici sono cliccabili tramite **badge [?]** che aprono tooltip contestuali. Questo sistema permette di accedere a definizioni semplificate (come il metodo di scoperta) senza appesantire la lettura principale. Per tornare alla visualizzazione completa si utilizza il tasto `ESC` o la `X` in alto a destra.
+
+
+In termini di scelte visive:
+
+- **Colori:** Per lo sfondo viene utilizzato il nero e il bianco per il testo, in modo da richiamare il contesto spaziale e rendere i pianeti distinguibili.
+- **Tipografia:** **IBM Plex Mono** e **IBM Plex Sans** per il testo descrittivo.
+- **Visualizzazione:** Gli esopianeti non hanno fotografie e la NASA stessa utilizza solo delle possibili rappresentazioni; di conseguenza non sono state usate texture illustrative, ma gli **shader** sono stati creati direttamente dai parametri fisici disponibili nell’archivio NASA.
 
 <img width="1728" height="961" alt="Planet_Detail_1" src="https://github.com/user-attachments/assets/3d3b8021-91f2-4dac-8a9b-d786d2dadd1f" />
 <img width="1728" height="961" alt="Planet_Detail_tooltip" src="https://github.com/user-attachments/assets/d0acade2-7057-438d-b22c-04630645e0b8" />
