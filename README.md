@@ -80,6 +80,40 @@ night = mix(night, vec3(0.58, 0.48, 0.38), iron * 0.65);
 vec3 col = mix(night, day, dayFace);
 ```
 
+#### Esempio Tooltip
+```js
+function handleGlossaryHover(e) {
+  const target = document.elementFromPoint(e.clientX, e.clientY);
+  if (!target) return;
+  let term = null;
+
+  // Identifica se il cursore si trova su un termine cliccabile
+  if (target.classList.contains('glossary-term')) {
+    term = target.dataset.term || target.textContent.trim();
+  }
+
+  // Se il termine è nel dizionario, aggiunge il testo e posiziona il tooltip
+  if (term && glossaryData[term]) {
+    glossaryTooltip.innerHTML = glossaryData[term];
+    const tooltipWidth = 300;
+    let leftPos = e.clientX + 20;
+
+    // Previene l'uscita del tooltip dal lato destro dello schermo
+    if (leftPos + tooltipWidth > window.innerWidth) {
+      leftPos = e.clientX - tooltipWidth - 20;
+    }
+
+    glossaryTooltip.style.left = leftPos + 'px';
+    glossaryTooltip.style.top = (e.clientY + 20) + 'px';
+    glossaryTooltip.classList.add('visible');
+  } else {
+    glossaryTooltip.classList.remove('visible');
+  }
+}
+
+document.addEventListener('mousemove', handleGlossaryHover); 
+```
+
 ## Target e contesto d’uso
 
 Il target primario include utenti generici senza formazione specifica, oltre a studenti e appassionati di astronomia. Il progetto può essere utilizzato in contesti espositivi o didattici come applicazione web interattiva fruibile tramite mouse e tastiera.
